@@ -1,0 +1,14 @@
+{
+  "name": "mod-mail-master",
+  "version": "1.0.0",
+  "description": "kgc dm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kgc",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
