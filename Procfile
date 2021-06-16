@@ -1,1 +1,1 @@
-worker: python invite.py
+Worker: node index.js
