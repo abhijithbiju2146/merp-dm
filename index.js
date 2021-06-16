@@ -256,4 +256,4 @@ client.on("message", async message => {
 })
 
 
-client.login("Nzg2NTg1MzU1NTE2MjQ4MDg0.X9Iisg.-ApZnKwe_pZOex7Ho5G_yFwEQnY")
+client.login(process.env.TOKEN)
