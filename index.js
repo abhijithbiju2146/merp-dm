@@ -12,7 +12,7 @@ client.on("ready", () => {
 
 
 client.on("channelDelete", (channel) => {
-    if (channel.parentID == channel.guild.channels.cache.find((x) => x.name == "MODMAIL").id) {
+    if (channel.parentID == channel.guild.channels.cache.find((x) => x.name == "ME HELP POINT").id) {
         const person = channel.guild.members.cache.find((x) => x.id == channel.name)
 
         if (!person) return;
@@ -44,28 +44,28 @@ client.on("message", async message => {
         if (command == "mod-mail") {
             if (!message.content.startsWith(prefix)) return;
             if (!message.member.hasPermission("ADMINISTRATOR")) {
-                return message.channel.send("You need Admin Permissions to setup the modmail system!")
+                return message.channel.send("You need Admin Permissions to setup the MΞ HELPER system!")
             }
 
             if (!message.guild.me.hasPermission("ADMINISTRATOR")) {
-                return message.channel.send("Bot need Admin Permissions to setup the modmail system!")
+                return message.channel.send("Bot need Admin Permissions to setup the MΞ HELPER system!")
             }
 
 
-            let role = message.guild.roles.cache.find((x) => x.name == "Staff")
+            let role = message.guild.roles.cache.find((x) => x.name == "__•STAFF•__")
             let everyone = message.guild.roles.cache.find((x) => x.name == "@everyone")
 
             if (!role) {
                 role = await message.guild.roles.create({
                     data: {
-                        name: "Staff",
+                        name: "__•STAFF•__",
                         color: "YELLOW"
                     },
-                    reason: "Role needed for ModMail System"
+                    reason: "Role needed for MΞ HELPER System"
                 })
             }
 
-            await message.guild.channels.create("MODMAIL", {
+            await message.guild.channels.create("ME HELP POINT", {
                 type: "category",
                 topic: "All the mail will be here",
                 permissionOverwrites: [
@@ -85,10 +85,10 @@ client.on("message", async message => {
 
         } else if (command == "close") {
             if (!message.content.startsWith(prefix)) return;
-            if (!message.member.roles.cache.find((x) => x.name == "Staff")) {
+            if (!message.member.roles.cache.find((x) => x.name == "__•STAFF•__")) {
                 return message.channel.send("You need Staff role to use this command")
             }
-            if (message.channel.parentID == message.guild.channels.cache.find((x) => x.name == "MODMAIL").id) {
+            if (message.channel.parentID == message.guild.channels.cache.find((x) => x.name == "ME HELP POINT").id) {
 
                 const person = message.guild.members.cache.get(message.channel.name)
 
@@ -110,13 +110,13 @@ client.on("message", async message => {
             }
         } else if (command == "open") {
             if (!message.content.startsWith(prefix)) return;
-            const category = message.guild.channels.cache.find((x) => x.name == "MODMAIL")
+            const category = message.guild.channels.cache.find((x) => x.name == "ME HELP POINT")
 
             if (!category) {
                 return message.channel.send("Moderation system is not setuped in this server, use " + prefix + "setup")
             }
 
-            if (!message.member.roles.cache.find((x) => x.name == "Staff")) {
+            if (!message.member.roles.cache.find((x) => x.name == "__•STAFF•__")) {
                 return message.channel.send("You need `Staff` role to use this command")
             }
 
@@ -165,12 +165,12 @@ client.on("message", async message => {
         } else if (command == "help") {
             if (!message.content.startsWith(prefix)) return;
             let embed = new discord.MessageEmbed()
-                .setAuthor('MODMAIL BOT') 
-                .addField("$setup", "Setup the modmail system(This is not for multiple server.)", true)
+                .setAuthor('MΞ HELPER BOT') 
+                .addField(".setup", "Setup the MΞ HELPER system(This is not for multiple server.)", true)
 
-                .addField("$open", 'Let you open the mail to contact anyone with his ID', true)
+                .addField(".open", 'Let you open the mail to contact anyone with his ID', true)
                 .setThumbnail(client.user.displayAvatarURL())
-                .addField("$close", "Close the mail in which you use this command.", true);
+                .addField(".close", "Close the mail in which you use this command.", true);
 
             return message.channel.send(embed)
 
@@ -185,7 +185,7 @@ client.on("message", async message => {
 
     if (message.channel.parentID) {
 
-        const category = message.guild.channels.cache.find((x) => x.name == "MODMAIL")
+        const category = message.guild.channels.cache.find((x) => x.name == "ME HELP POINT")
 
         if (message.channel.parentID == category.id) {
             let member = message.guild.members.cache.get(message.channel.name)
@@ -206,7 +206,7 @@ client.on("message", async message => {
     if (!message.guild) {
         const guild = await client.guilds.cache.get(ServerID) || await client.guilds.fetch(ServerID).catch(m => { })
         if (!guild) return;
-        const category = guild.channels.cache.find((x) => x.name == "MODMAIL")
+        const category = guild.channels.cache.find((x) => x.name == "ME HELP POINT")
         if (!category) return;
         const main = guild.channels.cache.find((x) => x.name == message.author.id)
 
