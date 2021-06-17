@@ -166,11 +166,11 @@ client.on("message", async message => {
             if (!message.content.startsWith(prefix)) return;
             let embed = new discord.MessageEmbed()
                 .setAuthor('MΞ HELPER BOT') 
-                .addField(".setup", "Setup the MΞ HELPER system(This is not for multiple server.)", true)
+                .addField("-setup", "Setup the MΞ HELPER system(This is not for multiple server.)", true)
 
-                .addField(".open", 'Let you open the mail to contact anyone with his ID', true)
+                .addField("-open", 'Let you open the mail to contact anyone with his ID', true)
                 .setThumbnail(client.user.displayAvatarURL())
-                .addField(".close", "Close the mail in which you use this command.", true);
+                .addField("-close", "Close the mail in which you use this command.", true);
 
             return message.channel.send(embed)
 
