@@ -4,7 +4,7 @@ const { prefix, ServerID } = require("./config.json")
 const config = require('./config.json');
 
 const activities_list = [
-    "M DM's",
+    "My DM",
     "Mallu Esports MΞ"
     ];
 
