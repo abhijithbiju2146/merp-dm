@@ -3,11 +3,22 @@ const client = new discord.Client()
 const { prefix, ServerID } = require("./config.json")
 const config = require('./config.json');
 
-client.on("ready", () => {
+const activities_list = [
+    "M DM's",
+    "Mallu Esports MΞ"
+    ];
 
-    console.log("Bot online")
-    client.user.setActivity("Watching My Dm's")
-})
+    client.on('ready', () => {
+        setInterval(() => {
+            const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
+            client.user.setActivity(activities_list[index],{ type: 'WATCHING' });
+        }, 2000); 
+
+      
+//bot log
+client.once('ready', () => {
+    console.log('MERP bot is online.');
+});
 
 
 
